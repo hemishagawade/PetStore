@@ -1,0 +1,12 @@
+{% include 'header.html' %}
+{% include 'sidebar.html' %}
+        <!-- row2 column 2 started -->
+        <div class="col-9 p-2" >
+            <!-- page specific content -->
+            {% block 'main' %}
+            {% endblock 'main' %}
+        </div>
+        <!-- row2 column 2 end -->
+    </div> 
+    <!-- end of row 2 -->
+{% include 'footer.html' %}

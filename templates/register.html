@@ -1,0 +1,42 @@
+{% extends 'loginlayout.html' %}
+{% load static %}
+
+{% block 'main' %}
+    <div class="row">
+        <div class="col-md-3 mx-auto my-3 shadow p-4 rounded" style="height: max-content; width: 35%;">
+            <h4>Create Account</h4>
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    <h5>{{ error }}</h5>
+                </div>
+            {% endif %}
+            <form action="/register" method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                <label class="form-label">Username:</label>
+                <input type="text" class="form-control" name='username'>
+                </div>
+                <div class="mb-3">
+                <label class="form-label">Email ID:</label>
+                <input type="email" class="form-control" name='email'>
+                </div>
+                <div class="mb-3">
+                <label class="form-label">Set Password:</label>
+                <input type="password" class="form-control" name='password'>
+                </div>
+                <div class="mb-3">
+                <label class="form-label">Confirm Password:</label>
+                <input type="password" class="form-control" name='confirm_password'>
+                </div>
+                <center>
+                <input type="submit" class="btn btn-primary" value="Sign Up" style="width: 100%;">
+                <hr>
+                <div class="mb-3">
+                    <label class="form-label"><i>Already have an account?</i></label><br>
+                    <button type="button" class="btn btn-dark" style="width: 100%;"><a href="/login" style="color: white;">Tap to Login</a></button>
+                </div>
+                </center>
+            </form>
+        </div>
+    </div>
+{% endblock 'main' %}

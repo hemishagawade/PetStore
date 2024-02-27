@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <!-- botstrap css -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>
+          a{
+            text-decoration: none;
+          }
+          img{
+            height: 217px;
+            width: 150px;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="container">                                       
+            <!-- start of row 1 hedaer/navbar -->
+            <nav class="navbar navbar-expand-lg bg-dark m-2" data-bs-theme="dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">PetStore</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="col-10">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/cart">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/orders">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/aboutus">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="/contact">Contact US</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-2">
+                      <div class="row">
+                        <ul class="navbar-nav ">
+                          <li class="nav-item">
+                            <a class="nav-link" href="/register">Register</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">/</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="/login">login</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </nav>
+            <!-- end of row 1/ hedaer/navbar -->
+
+            <!-- row 2 started  -->
+              <div class="row" >
+                <!-- row2 column 1 started -->
+                <div class="col-3 p-4 bg-body-secondary" >
+                    <h5>Filter Products By category</h5>
+                    <a href="">All</a><br>
+                    <a href="">Category 1</a><br>
+                    <a href="">Category 2</a><br>
+                    <a href="">Category 3</a><br>
+                    <hr>
+                    <h5>Sort By Price</h5>
+                    <a href="">Low to High</a><br>
+                    <a href="">High To Low</a>
+                    <hr>
+                    <h5>Search products by Price</h5>
+                    <form class="row g-3">
+                      <div class="col-auto">
+                        <label  >From:</label>
+                        <input type="text"  class="form-control" >
+                      </div><br>
+                      <div class="col-auto">
+                        <label  >To:</label>
+                        <input type="text" class="form-control" >
+                      </div>
+                      <div class="col-auto mx-auto" style="width: 100%;">
+                        <input type="submit" class="btn btn-dark" value="Search" style="width: 87%;"></input>
+                      </div>
+                    </form>
+                </div>
+                <!-- row2 column 1 end -->
+
+                <!-- row2 column 2 started -->
+                <div class="col-9 p-2" >
+                      <!-- starting 1 more row, with breakpoints  -->
+                      <div class="row box">
+                        <div class="col-md-3 col-sm-6 box">
+                            <div class="card" style="width: 100%;">
+                                <img src="{% static 'images/headphones.png' %}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Headphones</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 box">
+                            <div class="card" style="width: 100%;">
+                                <img src="{% static 'images/iWatch.png' %}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">iWtach</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 box">
+                            <div class="card" style="width: 100%;">
+                                <img src="{% static 'images/speaker.webp' %}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Speaker</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 box">   
+                            <div class="card" style="width: 100%;">
+                                <img src="{% static 'images/laptop.jpg' %}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h5 class="card-title">Laptop</h5>
+                                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                  <a href="#" class="btn btn-primary">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- row 2 col2 , ending inner row with breakpoints -->
+                </div>
+                <!-- row2 column 2 end -->
+              </div> 
+            <!-- end of row 2 -->
+              
+            <!-- start of row 3 footer  -->
+              <div class="row m-2" >
+                  <hr>
+                  <div class="col-4">
+                    <p> <i class="bi bi-geo-alt-fill"></i><b><big>MyStore</big></b><br>
+                      2nd Floor, Ishaan Arcade-1, Opposite Gaondevi Mandir, Above Canara bank, Gokhale Road, Landmark: 3 Buildings after McDonalds, Thane(W)-400602</p>
+                  </div>
+                  <div class="col-4">
+                    <h4>Curious to explore MyStore?</h4>
+                     <a href="/aboutus">Know About Us</a>  <br>
+                     <a href="/contact">Locate Us</a>
+                  </div>
+                  <div class="col-4">
+                    <h6>Feel free to connect with us</h6>
+                    <i class="bi bi-telephone-fill"></i>&nbsp;&nbsp;9123456789<br>
+                    <i class="bi bi-envelope"></i>&nbsp;&nbsp;mystore_office@gmail.com <br>
+                    <i class="bi bi-whatsapp"></i>&nbsp;&nbsp;9123456789<br>
+                    <i class="bi bi-linkedin"></i>&nbsp;&nbsp;MyStore_Biz<br>
+                    <i class="bi bi-facebook"></i>&nbsp;&nbsp;MyStore Online<br>
+                    <i class="bi bi-twitter"></i>&nbsp;&nbsp;mystorebizzz<br>
+                  </div>
+              </div>
+            <!-- end of row 3 footer  -->    
+        </div>
+        
+        <!-- bootstrap js -->
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block 'main' %}
+<div class="row">
+    {% for msg in messages %}
+        {% if msg.levels == DEFAULT_MESSAGE_LEVELS.SUCSESS %}
+            <div class="alert alert-success mx-auto" role="alert" style="width: 95%;">
+                <h5>{{ msg }}</h5>
+            </div>
+        {% elif msg.levels == DEFAULT_MESSAGE_LEVELS.ERROR %}
+            <div class="alert alert-danger mx-auto" role="alert" style="width: 95%;">
+                <h5>{{ msg }}</h5>
+            </div>
+        {% else %}
+            <div class="alert alert-warning mx-auto" role="alert" style="width: 95%;">
+                <h5>{{ msg }}</h5>
+            </div>
+        {% endif %}
+    {% endfor %}
+</div>
+<div class="row ">
+    {% if mycart %}
+        <!-- cart-item details -->
+        <div class="col-md-8 box shadow">
+            {% for cart in mycart %}
+                <div class="row">
+                    <!-- image -->
+                    <div class="col-md-6">
+                        <img src="{{cart.pid.p_image.url}}" alt="" height="200px" width="100%">
+                    </div>
+                    <!-- pet details -->
+                    <div class="col-md-6 box">
+                        <h4 class="card-title">{{cart.pid.name}}</h4>
+                        <small>
+                            <p>
+                            Gender: {{cart.pid.gender}} <br>
+                            Type: {{cart.pid.type}} <br>
+                            Breed: {{cart.pid.breed}} <br>         
+                            Age: {{cart.pid.age}} <br>
+                            Price: <strong>Rs.{{cart.pid.price}}</strong>
+                            </p>
+                        </small>
+                        <a href="/remove/{{cart.id}}" class="btn btn-primary" style="width: 45%;">Remove</a>
+                        &nbsp;&nbsp;
+                        <a href="/" class="btn btn-dark" style="width: 45%;">Add More</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <!-- billing section -->
+        <div class="col-md-4 box bg-secondary">
+            <div class="row p-3" style="color: white;">
+                <center><h3> Billing Section </h3></center>
+                <hr>
+                <table style="color: whitesmoke;">
+                    <tr>
+                        <th>Tota Cakes:</th>
+                        <td>{{count}}</td>
+                    </tr>
+                    <tr>
+                        <th>Total Amount:</th>
+                        <td>Rs. {{total}}</td>
+                    </tr>
+                    <tr>
+                        <th>Delivery Charges:</th>
+                        <td><i>FREE</i></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">______________________________________</th>
+                    </tr>
+                    <tr>
+                        <th>Final Bill Amount:</th>
+                        <td>Rs. {{total}}/-</td>
+                    </tr>
+                </table>
+                <center>
+                    <br>
+                    <a href="/confirmorder" class="btn btn-primary" style="width: 70%;">Confirm Order</a>
+                </center>
+            </div>
+        </div>
+    {% else %}  
+        <center>
+            <h2>Your Cart is Empty! Keep Shopping! <big><big>&#9786;</big></big><h2>
+        </center>
+    {% endif %}   
+</div>
+{% endblock 'main' %}

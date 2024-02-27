@@ -1,0 +1,31 @@
+{% load static %}
+            <!-- row 2 started  -->
+            <div class="row" >
+                <!-- row 2 column 1 started -->
+                <div class="col-3 p-4 bg-body-secondary" >
+                    <h5>Filter Pets By Category</h5>
+                    <a href="/">All</a><br>
+                    <a href="/searchby/cat">Cat</a><br>
+                    <a href="/searchby/dog">Dog</a><br>
+                    <hr>
+                    <h5>Sort Pets By Price</h5>
+                    <a href="/sort/asc">Low to High</a><br>
+                    <a href="/sort/desc">High To Low</a>
+                    <hr>
+                    <h5>Search Pets By Price</h5>
+                    <form class="row g-3" action="/pricerange">
+                      <div class="col-auto">
+                        <label  >From:</label>
+                        <input type="text"  class="form-control" name="min" >
+                      </div><br>
+                      <div class="col-auto">
+                        <label  >To:</label>
+                        <input type="text" class="form-control" name="max" >
+                      </div>
+                      <div class="col-auto mx-auto" style="width: 100%;">
+                        <input type="submit" class="btn btn-dark" value="Search" style="width: 87%;"></input>
+                      </div>
+                    </form>
+                </div>
+                <!-- row 2 column 1 end -->
+       <!-- </div> is not used as row 2 does not ends here, it ends in layout.html  -->

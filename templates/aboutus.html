@@ -1,0 +1,30 @@
+{% extends 'layout2.html' %}
+{% load static %}
+
+{% block 'main' %}
+    <!-- row 2 started  -->
+    <div class="row m-2 bg-body-tertiary" >
+        <!-- row2 column 1 started -->
+        <div class="col-4 m-auto" style="align-content: center;">
+            <div class="card mx-auto shadow" style="width: 80%;;">
+                <img src="{% static 'images/logo.jpg' %}" class="card-img-top" alt="..." height="90%" width="90%">
+            </div>
+        </div>
+        <!-- row2 column 1 end -->
+
+        <!-- row2 column 2 started -->
+        <div class="col-8 pt-2" >
+          <h3>About Us</h3>
+          <p>
+            <h6>Welcome to PetStore, where every pet is family!</h6>
+            At PetStore, we're dedicated to providing the best for your furry, feathery, and scaly friends. From premium products to expert advice, we're here to make pet parenthood a breeze. <br><br>
+            With a passion for pets and a commitment to excellence, we offer a curated selection of high-quality items. But we're more than just a store — we're a community of pet lovers supporting responsible pet ownership and adoption initiatives. <br><br>
+            Thank you for choosing PetStore. Let's make every moment with your pet special, together. <br><br>
+            With love and wagging tails, <br>
+            The PetStore Team 
+          </p>
+        </div>
+        <!-- row2 column 2 end -->
+      </div> 
+    <!-- end of row 2 -->
+{% endblock 'main' %}

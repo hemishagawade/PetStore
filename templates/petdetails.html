@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block 'main' %}
+    <div class="row">
+        <div class="col-5">
+            <img src="{{pet.p_image.url}}" class="card-img-top" alt="..." height="90%" width="90%">
+        </div>
+        <div class="col-7">
+            <h3 class="card-title">{{pet.name}}</h3>
+            <hr>
+            <p class="card-text">{{pet.description}}</p>
+            <hr>
+            <h5>Pet Details: </h5>
+            <p class="card-text">Gender: {{pet.gender}}</p>
+            <p class="card-text">Type: {{pet.type}}</p>
+            <p class="card-text">Breed: {{pet.breed}}</p>           
+            <p class="card-text">Age: {{pet.age}}</p>
+            <p class="card-text">Price: <strong>Rs.{{pet.price}}</strong></p>
+            <a href="/addtocart/{{pet.id}}" class="btn btn-primary" style="width: 30%;">Add To Cart</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/" class="btn btn-dark" style="width: 30%;">Go Back</a>
+        </div>
+    </div>
+{% endblock 'main' %}

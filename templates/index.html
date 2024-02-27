@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block 'main' %}
+    <div class="row">
+        {% for msg in messages %}
+            {% if msg.levels == DEFAULT_MESSAGE_LEVELS.SUCSESS %}
+                <div class="alert alert-success mx-auto" role="alert" style="width: 95%;">
+                    <h5>{{ msg }}</h5>
+                </div>
+            {% elif msg.levels == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <div class="alert alert-danger mx-auto" role="alert" style="width: 95%;">
+                    <h5>{{ msg }}</h5>
+                </div>
+            {% else %}
+                <div class="alert alert-warning mx-auto" role="alert" style="width: 95%;">
+                    <h5>{{ msg }}</h5>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="row">
+        {% for pet in pets %}
+        <div class="col-md-3 col-sm-6 box">
+            <div class="card" style="width: 100%;">
+                <img src="{{pet.p_image.url}}" class="card-img-top" alt="..."height="210px" width="350px">
+                <div class="card-body">
+                  <h5 class="card-title">{{pet.name}}</h5>
+                  <p class="card-text">{{pet.breed}} <br> {{pet.age}}</p>
+                  <strong>Rs.{{pet.price}}</strong> <br> <br>
+                  <a href="/details/{{pet.id}}" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock 'main' %}

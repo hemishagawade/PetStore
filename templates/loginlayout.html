@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <!-- botstrap css -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <style>
+            a{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- row 1 started  -->
+            <div class="row mx-auto mt-4 text-center">
+                <h3>Welcome to PetStore!</h3>
+            </div>
+            <!-- row 1 ended  -->
+
+            <!-- row 2 started -->
+            <div class="row" >
+                <!-- page specific content -->
+                {% block 'main' %}
+                {% endblock 'main' %}
+            </div>
+            <!-- row 2 end -->
+{% include 'footer.html' %}
