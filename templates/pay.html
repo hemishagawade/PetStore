@@ -9,7 +9,7 @@
         <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
         <script>
         var options = {
-            "key": "rzp_test_9zB92T3BhDnV3l", // Enter the Key ID generated from the Dashboard
+            "key": "enteryourkeyid", // Enter the Key ID generated from the Dashboard
             "amount": "{{data.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "Pet Store",
@@ -17,9 +17,6 @@
             "image": "https://example.com/your_logo",
             "order_id": "{{data.receipt}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
             "handler": function (response){
-                // alert(response.razorpay_payment_id);
-                // alert(response.razorpay_order_id);
-                // alert(response.razorpay_signature)
                 window.location.href = 'http://localhost:8000/placeorder'
             },
             "prefill": {
