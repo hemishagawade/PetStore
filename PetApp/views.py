@@ -170,7 +170,7 @@ def makePayment(request):
     total = 0
     for cart in data:
         total += cart.pid.price * cart.quantity
-    client = razorpay.Client(auth=("rzp_test_9zB92T3BhDnV3l", "bo0RCp9AcGtMxoqpOh9JdUgs"))
+    client = razorpay.Client(auth=("enteryourkeyid", "enteryourkeysecret"))
     data = { "amount": total*100, "currency": "INR", "receipt": "" }
     payment = client.order.create(data=data)
     context['data']= payment
@@ -198,7 +198,7 @@ def placeorder(request):
     send_mail(
         "PetStore : Order Confirmation",     #subject
         msgBody,                             #body
-        "hemisha.d.g@gmail.com",             #sender
+        "enteryouremail",                    #sender
         [custEmail],                         #receiver
         fail_silently=False,
     )
