@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'django_petstore',
         'USER': 'localhost',
         'USER': 'root',
-        'PASSWORD': 'Hemy@29070118',
+        'PASSWORD': 'enteryourpassword',
         'PORT': 3306
     }
 }
@@ -92,8 +92,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'hemisha.d.g@gmail.com'
-EMAIL_HOST_PASSWORD = 'luns efdy vrgb yajx'
+EMAIL_HOST_USER = 'enteryouremail'
+EMAIL_HOST_PASSWORD = 'enteryourpassword'
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
